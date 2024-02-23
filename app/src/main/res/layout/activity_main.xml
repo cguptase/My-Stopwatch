@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+    >
+
+    <ImageView
+        android:id="@+id/clockImg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/clockImg"
+        android:src="@drawable/clock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/_00_00_00"
+        app:layout_constraintEnd_toEndOf="@+id/clockImg"
+        app:layout_constraintStart_toStartOf="@+id/clockImg"
+        app:layout_constraintTop_toBottomOf="@+id/clockImg" />
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="48dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeTV" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/stopwatchBtn"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/start"
+        android:textSize="35sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="@+id/timeTV"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resetBtn"
+        app:cornerRadius="100dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:textSize="18sp"
+        android:text="@string/reset"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@id/stopwatchBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/stopwatchBtn"
+        app:layout_constraintStart_toEndOf="@id/stopwatchBtn"
+        />
+
+    <Chronometer
+        android:id="@+id/timerChronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/_00_00_00"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/stopwatchBtn"
+        app:layout_constraintStart_toStartOf="@+id/stopwatchBtn"
+        app:layout_constraintTop_toBottomOf="@+id/stopwatchBtn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/lapBtn"
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_height="wrap_content"
+        app:cornerRadius="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/lap"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/resetBtn"
+        app:layout_constraintStart_toStartOf="@+id/timerChronometer"
+        app:layout_constraintTop_toBottomOf="@+id/timerChronometer" />
+
+
+    <ListView
+        android:id="@+id/lapList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lapBtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
